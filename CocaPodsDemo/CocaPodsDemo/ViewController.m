@@ -39,12 +39,50 @@
     
     
     
-    UIView *sv1 = [UIView new];
-    sv1.backgroundColor = [UIColor redColor];
-    [sv addSubview:sv1];
-    [sv1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(sv).width.insets(UIEdgeInsetsMake(10, 10, 10, 10));
+//    UIView *sv1 = [UIView new];
+//    sv1.backgroundColor = [UIColor redColor];
+//    [sv addSubview:sv1];
+//    [sv1 mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.edges.equalTo(sv).width.insets(UIEdgeInsetsMake(10, 10, 10, 10));
+//    }];
+    
+    UIView *sv2 = [UIView new];
+    UIView *sv3 = [UIView new];
+
+    sv2.backgroundColor = [UIColor redColor];
+    sv3.backgroundColor = [UIColor redColor];
+
+    [sv addSubview:sv2];
+    [sv addSubview:sv3];
+    [sv2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.mas_equalTo(sv.mas_centerY);
+        make.left.equalTo(sv.mas_left).with.offset(10);
+        make.right.equalTo(sv3.mas_left).with.offset(-10);
+        make.height.mas_equalTo(@150);
+        make.width.equalTo(sv3);
     }];
+    [sv3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(sv.mas_centerY);
+        make.left.equalTo(sv2.mas_right).with.offset(10);
+        make.right.equalTo(sv.mas_right).with.offset(-10);
+        make.height.mas_equalTo(@150);
+        make.width.mas_equalTo(sv2);
+    }];
+//    [sv2 mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerY.mas_equalTo(sv.mas_centerY);
+//        make.left.equalTo(sv.mas_left).with.offset(padding1);
+//        make.right.equalTo(sv3.mas_left).with.offset(-padding1);
+//        make.height.mas_equalTo(@150);
+//        make.width.equalTo(sv3);
+//    }];
+//    
+//    [sv3 mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerY.mas_equalTo(sv.mas_centerY);
+//        make.left.equalTo(sv2.mas_right).with.offset(padding1);
+//        make.right.equalTo(sv.mas_right).with.offset(-padding1);
+//        make.height.mas_equalTo(@150);
+//        make.width.equalTo(sv2);
+//    }];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
