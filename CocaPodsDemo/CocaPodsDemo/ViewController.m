@@ -21,8 +21,11 @@
     [super viewDidLoad];
     WS(ws);
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
+    
     collectionview = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
     [collectionview registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+    [collectionview registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headView"];
+    [collectionview registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"headView"];
     collectionview.delegate = self;
     collectionview.dataSource = self;
     [self.view addSubview:collectionview];
@@ -143,6 +146,24 @@
     
     // Do any additional setup after loading the view, typically from a nib.
 }
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    return CGSizeMake(240, 25);
+}
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
+    return CGSizeMake(100, 25);
+}
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    UICollectionReusableView *headView;
+    if ([kind isEqual:UICollectionElementKindSectionHeader]){
+        headView = [collectionview dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headView" forIndexPath:indexPath];
+        [headView setBackgroundColor:[UIColor blackColor]];
+    }
+    else if ([kind isEqual:UICollectionElementKindSectionFooter]){
+        headView = [collectionview dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"headView" forIndexPath:indexPath];
+        [headView setBackgroundColor:[UIColor brownColor]];
+    }
+    return headView;
+}
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return 32;
 }
@@ -161,25 +182,51 @@
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.section == 0 && indexPath.row == 1){
+        return CGSizeMake(50, 50);
+    }
     return CGSizeMake(120, 200);
 }
 -(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayou minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
+    if (section == 0){
+        return 0;
+    }
     return 0;
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
-    return 20;
+    if (section == 0){
+        return 10.0f;
+    }
+    return 20.0f;
 }
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-    return CGSizeZero;
-}
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
-    return CGSizeZero;
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    if (section == 0){
+        return UIEdgeInsetsMake(53, 25, 15, 25);
+    }
+    return UIEdgeInsetsMake(0, 0, 0, 0);
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+}
+- (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath{
+    UICollectionViewCell *cell  = [collectionview cellForItemAtIndexPath:indexPath];
+    [cell setBackgroundColor:[UIColor purpleColor]];
+
+}
+- (void)collectionView:(UICollectionView *)colView  didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath
+{
+//    UICollectionViewCell* cell = [colView cellForItemAtIndexPath:indexPath];
+//    
+//    [cell setBackgroundColor:[UIColor yellowColor]];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 @end
