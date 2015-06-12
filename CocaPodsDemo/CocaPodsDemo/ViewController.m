@@ -178,9 +178,15 @@
     }else{
         [cell setBackgroundColor:[UIColor greenColor]];
     }
+    UILongPressGestureRecognizer *lpg = [[UILongPressGestureRecognizer alloc]init];
+    [lpg addTarget:self action:@selector(longPress:)];
+    [cell addGestureRecognizer:lpg];
     return cell;
 }
-
+- (void)longPress:(id)sender{
+    UICollectionViewCell *cell = (UICollectionViewCell *)[collectionview cellForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+    cell.hidden = YES;
+}
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.section == 0 && indexPath.row == 1){
         return CGSizeMake(50, 50);
