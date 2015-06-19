@@ -1,0 +1,30 @@
+//
+//  PrefixHeader.pch
+//  瀑布流接口设计
+//
+//  Created by wgl7569 on 15-2-13.
+//  Copyright (c) 2015年 wgl7569. All rights reserved.
+//
+
+#ifndef ________PrefixHeader_pch
+#define ________PrefixHeader_pch
+
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+// 颜色
+#define YYColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define YYColorRGBA(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
+
+// 随机色
+#define YYRandomColor YYColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+#endif
+#endif

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LiveView.h"
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 
 @end
