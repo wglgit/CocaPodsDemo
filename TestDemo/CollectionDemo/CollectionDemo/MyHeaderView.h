@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MyHeaderViewCollectionReusableView.h
 //  CollectionDemo
 //
 //  Created by wgl7569 on 15-6-19.
@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MyFlowLayout.h"
-@interface ViewController : UIViewController <UICollectionViewDataSource,MyFlowLayoutDelegate>
 
-
+@interface MyHeaderView : UICollectionReusableView
+-(void)setLabelText:(NSString *)str;
 @end
-

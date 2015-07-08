@@ -406,7 +406,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/wgl7569/Desktop/TestDemo/WenWeiBoTest/WenWeiBoTestTests/WWB-PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WenWeiBoTestTests/WWB-PrefixHeader.pch";
 				INFOPLIST_FILE = WenWeiBoTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

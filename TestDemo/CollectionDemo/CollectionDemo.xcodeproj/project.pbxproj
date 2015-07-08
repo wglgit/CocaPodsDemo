@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E47F64361B3BF6FC00B1DA73 /* BookShelf.m in Sources */ = {isa = PBXBuildFile; fileRef = E47F64351B3BF6FC00B1DA73 /* BookShelf.m */; };
 		E4BAA13A1B340A370044BC4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BAA1391B340A370044BC4A /* main.m */; };
 		E4BAA13D1B340A370044BC4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BAA13C1B340A370044BC4A /* AppDelegate.m */; };
 		E4BAA1401B340A370044BC4A /* CollectionDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4BAA13E1B340A370044BC4A /* CollectionDemo.xcdatamodeld */; };
 		E4BAA1431B340A370044BC4A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BAA1421B340A370044BC4A /* ViewController.m */; };
-		E4BAA1461B340A380044BC4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BAA1441B340A380044BC4A /* Main.storyboard */; };
 		E4BAA1481B340A380044BC4A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4BAA1471B340A380044BC4A /* Images.xcassets */; };
 		E4BAA14B1B340A380044BC4A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4BAA1491B340A380044BC4A /* LaunchScreen.xib */; };
 		E4BAA1571B340A380044BC4A /* CollectionDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BAA1561B340A380044BC4A /* CollectionDemoTests.m */; };
+		E4BAA1621B3411AD0044BC4A /* MyFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BAA1611B3411AD0044BC4A /* MyFlowLayout.m */; };
+		E4BAA1651B3411CA0044BC4A /* MyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BAA1641B3411CA0044BC4A /* MyCollectionViewCell.m */; };
+		E4BAA16B1B3417F40044BC4A /* MyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BAA16A1B3417F40044BC4A /* MyHeaderView.m */; };
+		E4BE23611B4298C300E20E13 /* UIColor+renderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BE23601B4298C300E20E13 /* UIColor+renderColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E47F64341B3BF6FC00B1DA73 /* BookShelf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookShelf.h; sourceTree = "<group>"; };
+		E47F64351B3BF6FC00B1DA73 /* BookShelf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookShelf.m; sourceTree = "<group>"; };
 		E4BAA1341B340A370044BC4A /* CollectionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BAA1381B340A370044BC4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4BAA1391B340A370044BC4A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -36,12 +42,19 @@
 		E4BAA13F1B340A370044BC4A /* CollectionDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CollectionDemo.xcdatamodel; sourceTree = "<group>"; };
 		E4BAA1411B340A370044BC4A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E4BAA1421B340A370044BC4A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E4BAA1451B340A380044BC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4BAA1471B340A380044BC4A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E4BAA14A1B340A380044BC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E4BAA1501B340A380044BC4A /* CollectionDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BAA1551B340A380044BC4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4BAA1561B340A380044BC4A /* CollectionDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionDemoTests.m; sourceTree = "<group>"; };
+		E4BAA1601B3411AD0044BC4A /* MyFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFlowLayout.h; sourceTree = "<group>"; };
+		E4BAA1611B3411AD0044BC4A /* MyFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFlowLayout.m; sourceTree = "<group>"; };
+		E4BAA1631B3411CA0044BC4A /* MyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewCell.h; sourceTree = "<group>"; };
+		E4BAA1641B3411CA0044BC4A /* MyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewCell.m; sourceTree = "<group>"; };
+		E4BAA1691B3417F40044BC4A /* MyHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHeaderView.h; sourceTree = "<group>"; };
+		E4BAA16A1B3417F40044BC4A /* MyHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHeaderView.m; sourceTree = "<group>"; };
+		E4BE235F1B4298C300E20E13 /* UIColor+renderColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+renderColor.h"; sourceTree = "<group>"; };
+		E4BE23601B4298C300E20E13 /* UIColor+renderColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+renderColor.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,11 +100,20 @@
 				E4BAA13C1B340A370044BC4A /* AppDelegate.m */,
 				E4BAA1411B340A370044BC4A /* ViewController.h */,
 				E4BAA1421B340A370044BC4A /* ViewController.m */,
-				E4BAA1441B340A380044BC4A /* Main.storyboard */,
 				E4BAA1471B340A380044BC4A /* Images.xcassets */,
 				E4BAA1491B340A380044BC4A /* LaunchScreen.xib */,
 				E4BAA13E1B340A370044BC4A /* CollectionDemo.xcdatamodeld */,
 				E4BAA1371B340A370044BC4A /* Supporting Files */,
+				E4BAA1601B3411AD0044BC4A /* MyFlowLayout.h */,
+				E4BAA1611B3411AD0044BC4A /* MyFlowLayout.m */,
+				E4BAA1631B3411CA0044BC4A /* MyCollectionViewCell.h */,
+				E4BAA1641B3411CA0044BC4A /* MyCollectionViewCell.m */,
+				E4BAA1691B3417F40044BC4A /* MyHeaderView.h */,
+				E4BAA16A1B3417F40044BC4A /* MyHeaderView.m */,
+				E47F64341B3BF6FC00B1DA73 /* BookShelf.h */,
+				E47F64351B3BF6FC00B1DA73 /* BookShelf.m */,
+				E4BE235F1B4298C300E20E13 /* UIColor+renderColor.h */,
+				E4BE23601B4298C300E20E13 /* UIColor+renderColor.m */,
 			);
 			path = CollectionDemo;
 			sourceTree = "<group>";
@@ -202,7 +224,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4BAA1461B340A380044BC4A /* Main.storyboard in Resources */,
 				E4BAA14B1B340A380044BC4A /* LaunchScreen.xib in Resources */,
 				E4BAA1481B340A380044BC4A /* Images.xcassets in Resources */,
 			);
@@ -223,7 +244,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4BAA13D1B340A370044BC4A /* AppDelegate.m in Sources */,
+				E4BAA1621B3411AD0044BC4A /* MyFlowLayout.m in Sources */,
+				E4BAA16B1B3417F40044BC4A /* MyHeaderView.m in Sources */,
+				E47F64361B3BF6FC00B1DA73 /* BookShelf.m in Sources */,
+				E4BAA1651B3411CA0044BC4A /* MyCollectionViewCell.m in Sources */,
 				E4BAA1401B340A370044BC4A /* CollectionDemo.xcdatamodeld in Sources */,
+				E4BE23611B4298C300E20E13 /* UIColor+renderColor.m in Sources */,
 				E4BAA1431B340A370044BC4A /* ViewController.m in Sources */,
 				E4BAA13A1B340A370044BC4A /* main.m in Sources */,
 			);
@@ -248,14 +274,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E4BAA1441B340A380044BC4A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E4BAA1451B340A380044BC4A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E4BAA1491B340A380044BC4A /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -416,6 +434,7 @@
 				E4BAA15C1B340A380044BC4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E4BAA15D1B340A380044BC4A /* Build configuration list for PBXNativeTarget "CollectionDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +443,7 @@
 				E4BAA15F1B340A380044BC4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
