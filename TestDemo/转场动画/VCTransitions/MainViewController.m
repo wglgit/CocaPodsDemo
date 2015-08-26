@@ -10,11 +10,11 @@
 #import "OptionsViewController.h"
 #import "ImageViewController.h"
 #import "CollectionViewController.h"
-
 #import "ModalAnimation.h"
 #import "SlideAnimation.h"
 #import "ShuffleAnimation.h"
 #import "ScaleAnimation.h"
+#import "VCTransitions-Swift.h"
 
 @interface MainViewController () {
     NSArray *_cellTitles, *_cellActions;
@@ -29,9 +29,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-    
+        
     //Setup our table view info
     _cellTitles = @[@"Image View", @"Collection View"];
     _cellActions = @[@"presentImageController", @"presentCollectionController"];

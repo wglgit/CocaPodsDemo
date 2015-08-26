@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09C531151B75B129004A8630 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C531141B75B129004A8630 /* Social.framework */; };
 		E442E34C1A89A52300AD8FF2 /* WAudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E442E34B1A89A52300AD8FF2 /* WAudioTool.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E49FF7AE1A7A044F009F467F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E49FF7AD1A7A044F009F467F /* main.m */; };
 		E49FF7B11A7A044F009F467F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E49FF7B01A7A044F009F467F /* AppDelegate.m */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09C531141B75B129004A8630 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		E442E3491A89A46E00AD8FF2 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		E442E34A1A89A52300AD8FF2 /* WAudioTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAudioTool.h; sourceTree = "<group>"; };
 		E442E34B1A89A52300AD8FF2 /* WAudioTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAudioTool.m; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09C531151B75B129004A8630 /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +148,7 @@
 		E49FF7AB1A7A044F009F467F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				09C531141B75B129004A8630 /* Social.framework */,
 				E49FF7AC1A7A044F009F467F /* Info.plist */,
 				E49FF7AD1A7A044F009F467F /* main.m */,
 			);

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "VCTransitions-Swift.h"
+#import "VCTransitions-Bridging-Header.h"
 @interface MainViewController : UITableViewController <UIViewControllerTransitioningDelegate, UINavigationControllerDelegate, UITabBarControllerDelegate>
 
 @end

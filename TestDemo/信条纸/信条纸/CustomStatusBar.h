@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface CustomStatusBar : UIWindow
-
+{
+    UILabel *_statusMsgLabel;
+}
+- (void)showStatusMessage:(NSString *)message;
+-(void)hide;
 @end

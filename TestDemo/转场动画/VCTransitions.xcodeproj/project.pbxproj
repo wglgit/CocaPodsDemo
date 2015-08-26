@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09DD8D761B8B249300C1CBD1 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DD8D751B8B249300C1CBD1 /* SwiftViewController.swift */; };
 		C502F79A17846CCB00E8EEEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C502F79917846CCB00E8EEEF /* Foundation.framework */; };
 		C502F79C17846CCB00E8EEEF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C502F79B17846CCB00E8EEEF /* CoreGraphics.framework */; };
 		C502F7A417846CCB00E8EEEF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C502F7A217846CCB00E8EEEF /* InfoPlist.strings */; };
@@ -28,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09DD8D741B8B249300C1CBD1 /* VCTransitions-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VCTransitions-Bridging-Header.h"; sourceTree = "<group>"; };
+		09DD8D751B8B249300C1CBD1 /* SwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftViewController.swift; sourceTree = "<group>"; };
 		C502F79617846CCB00E8EEEF /* VCTransitions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VCTransitions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C502F79917846CCB00E8EEEF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C502F79B17846CCB00E8EEEF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,6 +125,8 @@
 				C502F7D617846D9C00E8EEEF /* Animations */,
 				C502F7A017846CCB00E8EEEF /* Supporting Files */,
 				C502F7AB17846CCB00E8EEEF /* Images.xcassets */,
+				09DD8D751B8B249300C1CBD1 /* SwiftViewController.swift */,
+				09DD8D741B8B249300C1CBD1 /* VCTransitions-Bridging-Header.h */,
 			);
 			path = VCTransitions;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09DD8D761B8B249300C1CBD1 /* SwiftViewController.swift in Sources */,
 				C502F7D417846D9800E8EEEF /* ModalAnimation.m in Sources */,
 				C502F7ED1784A99500E8EEEF /* ShuffleAnimation.m in Sources */,
 				C502F7AA17846CCB00E8EEEF /* AppDelegate.m in Sources */,
@@ -320,11 +326,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VCTransitions/VCTransitions-Prefix.pch";
 				INFOPLIST_FILE = "VCTransitions/VCTransitions-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VCTransitions/VCTransitions-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -334,11 +345,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VCTransitions/VCTransitions-Prefix.pch";
 				INFOPLIST_FILE = "VCTransitions/VCTransitions-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VCTransitions/VCTransitions-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

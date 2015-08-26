@@ -7,7 +7,9 @@
 //
 
 #import "ViewController.h"
-
+#import "CustomStatusBar.h"
+#import "信条纸-Bridging-Header.h"
+#import "信条纸-swift.h"
 @interface ViewController ()
 
 @end
@@ -39,6 +41,13 @@
     self.view.backgroundColor = color;
     
     
+    UIButton *btn =[ UIButton buttonWithType:UIButtonTypeContactAdd];
+    btn.frame = CGRectMake(100, 100, 40, 40);
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(addBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    
 //    CGSize size = CGSizeMake(self.view.frame.size.width, 35);
 //    UIGraphicsBeginImageContextWithOptions(size , NO, 0);
 //    
@@ -63,7 +72,34 @@
 //    UIImage *image=UIGraphicsGetImageFromCurrentImageContext();
 //    UIColor *color=[UIColor colorWithPatternImage:image];
 //    self.view.backgroundColor=color;
+//    CustomStatusBar *cs = [[CustomStatusBar alloc]init];
+//    [cs showStatusMessage:@"22222222"];
+//    [self setRefreshWindow];
 
+    
+}
+-(void)addBtnAction{
+    SwiftViewController *sv = [[SwiftViewController alloc]init];
+    [self presentViewController:sv animated:YES completion:^{
+        
+    }];
+}
+-(void)setRefreshWindow{
+    CGRect frame = CGRectMake(0.0, 0.0, 320.0, 20.0);
+    UIWindow *statusbarWindow = [[UIWindow alloc] initWithFrame:frame];
+    [statusbarWindow setBackgroundColor:[UIColor blackColor]];
+    [statusbarWindow setWindowLevel:UIWindowLevelStatusBar+1.0f];
+    
+    // 添加自定义子视图
+    UIImageView *customView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 0, 120, 18)];
+    customView.image=[UIImage imageNamed:@"数据刷新栏.png"];
+    
+    UILabel *label=[[UILabel alloc] initWithFrame:CGRectMake(100, 0, 100, 20)];
+    label.backgroundColor=[UIColor clearColor];
+    label.text=@"数据正在刷新";
+    [customView addSubview:label];
+    [statusbarWindow addSubview:customView];
+    [statusbarWindow makeKeyAndVisible];
 }
 
 - (void)didReceiveMemoryWarning {

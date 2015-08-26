@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09ACCC5B1B82D657008829B4 /* CustomStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 09ACCC5A1B82D657008829B4 /* CustomStatusBar.m */; };
+		09DD8D6E1B8B0C9E00C1CBD1 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DD8D6D1B8B0C9E00C1CBD1 /* SwiftViewController.swift */; };
 		E4BDE6B31B43DA080050BB0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BDE6B21B43DA080050BB0D /* main.m */; };
 		E4BDE6B61B43DA080050BB0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4BDE6B51B43DA080050BB0D /* AppDelegate.m */; };
 		E4BDE6B91B43DA080050BB0D /* ___.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4BDE6B71B43DA080050BB0D /* ___.xcdatamodeld */; };
@@ -28,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09ACCC591B82D657008829B4 /* CustomStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomStatusBar.h; sourceTree = "<group>"; };
+		09ACCC5A1B82D657008829B4 /* CustomStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomStatusBar.m; sourceTree = "<group>"; };
+		09DD8D6C1B8B0C9E00C1CBD1 /* 信条纸-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "信条纸-Bridging-Header.h"; sourceTree = "<group>"; };
+		09DD8D6D1B8B0C9E00C1CBD1 /* SwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftViewController.swift; path = ../SwiftViewController.swift; sourceTree = "<group>"; };
 		E4BDE6AD1B43DA080050BB0D /* 信条纸.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "信条纸.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4BDE6B11B43DA080050BB0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4BDE6B21B43DA080050BB0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -68,6 +74,7 @@
 				E4BDE6AF1B43DA080050BB0D /* 信条纸 */,
 				E4BDE6CC1B43DA080050BB0D /* 信条纸Tests */,
 				E4BDE6AE1B43DA080050BB0D /* Products */,
+				09DD8D6C1B8B0C9E00C1CBD1 /* 信条纸-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +90,7 @@
 		E4BDE6AF1B43DA080050BB0D /* 信条纸 */ = {
 			isa = PBXGroup;
 			children = (
+				09DD8D6D1B8B0C9E00C1CBD1 /* SwiftViewController.swift */,
 				E4BDE6B41B43DA080050BB0D /* AppDelegate.h */,
 				E4BDE6B51B43DA080050BB0D /* AppDelegate.m */,
 				E4BDE6BA1B43DA080050BB0D /* ViewController.h */,
@@ -92,6 +100,8 @@
 				E4BDE6C21B43DA080050BB0D /* LaunchScreen.xib */,
 				E4BDE6B71B43DA080050BB0D /* ___.xcdatamodeld */,
 				E4BDE6B01B43DA080050BB0D /* Supporting Files */,
+				09ACCC591B82D657008829B4 /* CustomStatusBar.h */,
+				09ACCC5A1B82D657008829B4 /* CustomStatusBar.m */,
 			);
 			path = "信条纸";
 			sourceTree = "<group>";
@@ -222,8 +232,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09DD8D6E1B8B0C9E00C1CBD1 /* SwiftViewController.swift in Sources */,
 				E4BDE6B61B43DA080050BB0D /* AppDelegate.m in Sources */,
 				E4BDE6B31B43DA080050BB0D /* main.m in Sources */,
+				09ACCC5B1B82D657008829B4 /* CustomStatusBar.m in Sources */,
 				E4BDE6BC1B43DA080050BB0D /* ViewController.m in Sources */,
 				E4BDE6B91B43DA080050BB0D /* ___.xcdatamodeld in Sources */,
 			);
@@ -347,9 +359,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "信条纸/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "信条纸-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -357,9 +373,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "信条纸/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "信条纸-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -416,6 +435,7 @@
 				E4BDE6D51B43DA080050BB0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E4BDE6D61B43DA080050BB0D /* Build configuration list for PBXNativeTarget "信条纸Tests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +444,7 @@
 				E4BDE6D81B43DA080050BB0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

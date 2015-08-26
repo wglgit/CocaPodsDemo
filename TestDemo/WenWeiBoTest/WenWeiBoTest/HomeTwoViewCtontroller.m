@@ -8,6 +8,8 @@
 
 #import "HomeTwoViewCtontroller.h"
 #import "HomeThreeViewController.h"
+#import <Social/Social.h>
+#import <Social/SocialDefines.h>
 
 @interface HomeTwoViewCtontroller ()
 
@@ -36,10 +38,33 @@
 }
 -(void)btnAction
 {
-    HomeThreeViewController *htv = [[HomeThreeViewController alloc]init];
-    htv.title = @"three";
-    [self.navigationController pushViewController:htv animated:YES];
+//    HomeThreeViewController *htv = [[HomeThreeViewController alloc]init];
+//    htv.title = @"three";
+//    [self.navigationController pushViewController:htv animated:YES];
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeSinaWeibo]){
+        SLComposeViewController *slC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeSinaWeibo];
+        SLComposeViewControllerCompletionHandler myBlock = ^(SLComposeViewControllerResult result){
+            if (result == SLComposeViewControllerResultCancelled){
+                
+            }
+            else{
+                
+            }
+            [slC dismissViewControllerAnimated:YES completion:^{
+                
+            }];
+        };
+        slC.completionHandler = myBlock;
+        [slC setInitialText:@"112233444444"];
+        [self presentViewController:slC animated:YES completion:^{
+            
+        }];
+  
+    }else{
+        NSLog(@"__________________");
+    }
 }
+
 /*
 #pragma mark - Navigation
 
