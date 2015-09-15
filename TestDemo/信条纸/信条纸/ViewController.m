@@ -10,15 +10,24 @@
 #import "CustomStatusBar.h"
 #import "信条纸-Bridging-Header.h"
 #import "信条纸-swift.h"
+#import "NSString+Additions.h"
+#import "UITextField+ExtentRange.h"
 @interface ViewController ()
+{
+    UITextField *moneyTextField;
+    NSString *money;
+    NSRange slectRange;
+}
 
 @end
-
+typedef NS_ENUM(NSInteger, EMMS) {
+   LSDFJKLAJDFKD
+};
 @implementation ViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    // Do any additional setup after loading the view, typically from a nib.、
+    
     CGSize size = CGSizeMake(self.view.frame.size.width,26);
     UIGraphicsBeginImageContextWithOptions(size, NO, 0);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
@@ -45,7 +54,6 @@
     btn.frame = CGRectMake(100, 100, 40, 40);
     [self.view addSubview:btn];
     [btn addTarget:self action:@selector(addBtnAction) forControlEvents:UIControlEventTouchUpInside];
-    
     
     
 //    CGSize size = CGSizeMake(self.view.frame.size.width, 35);
@@ -75,8 +83,170 @@
 //    CustomStatusBar *cs = [[CustomStatusBar alloc]init];
 //    [cs showStatusMessage:@"22222222"];
 //    [self setRefreshWindow];
-
     
+    
+    moneyTextField = [[UITextField alloc]init];
+    moneyTextField.backgroundColor = [UIColor orangeColor];
+    moneyTextField.frame = CGRectMake(20, 30, 100, 40);
+    moneyTextField.delegate = self;
+    moneyTextField.keyboardType = UIKeyboardTypeNumberPad;
+    [self.view addSubview:moneyTextField];
+    money = @"100000";
+    
+}
+- (NSString *)stringWithOutComma:(NSString *)commaString
+{
+    NSArray *array = [commaString componentsSeparatedByString:@","];
+    return [array componentsJoinedByString:@""];
+}
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+
+}
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    {
+        NSMutableString *textFieldString = [NSMutableString stringWithString:textField.text];
+        if ([string isEqualToString:@""])//如果string是空白的话代表删除一位
+        {
+            [textFieldString deleteCharactersInRange:NSMakeRange(range.location, 1)];
+            NSMutableString *textString = [NSMutableString stringWithString:[self stringWithOutComma:textFieldString]];
+            if (textString.length == 0)
+            {
+                [textString appendString:@"0"];
+                moneyTextField.text = textString;
+                NSRange range = [moneyTextField textRange];
+                [moneyTextField setSlectRange:range];
+                return NO;
+            }
+            NSRange rangel = [textString rangeOfString:@"."];
+            if (rangel.location != NSNotFound)
+            {
+                NSArray *pointArray = [textString componentsSeparatedByString:@"."];
+                NSString *pointString = pointArray[0];
+                NSString *pointString1 = pointArray[1];
+                if (pointString == nil || pointString.length == 0 || [pointString integerValue] == 0)
+                {
+                    textString = [NSMutableString stringWithFormat:@"0.%@",pointString1];
+                }
+            }
+            else
+            {
+                textString = [NSMutableString stringWithFormat:@"%d",[textString intValue]];
+            }
+            slectRange = [moneyTextField textRange];
+            moneyTextField.text = [NSString stringWithComma:textString];
+            [moneyTextField setSlectRange:slectRange];
+
+            return NO;
+        }
+        else
+        {
+            char aCharacter = [string characterAtIndex:0];
+            //n (数字或小数点)
+            if(!((aCharacter >= 48 && aCharacter <= 57) || aCharacter == 46))
+            {//非数字或小数点
+                return NO;
+            }
+            else if (aCharacter == 46 && [textFieldString rangeOfString:@"."].location != NSNotFound)
+            {//小数点不能输入2次
+                return NO;
+            }
+            else if (aCharacter != 46 && [textFieldString rangeOfString:@"."].location != NSNotFound)
+            {//有小数点
+                if (textFieldString.length - [textFieldString rangeOfString:@"."].location > 2 &&
+                    range.location > [textFieldString rangeOfString:@"."].location)
+                {//小数点后超2位
+                    if ([textFieldString floatValue] == 0.00f){
+                        moneyTextField.text = string;
+                    }
+                    if ([moneyTextField.text doubleValue] > [money doubleValue])
+                    {
+                        moneyTextField.text = [NSString stringWithComma:money];
+                        return NO;
+                    }
+                    return NO;
+                }
+                else if ([textFieldString rangeOfString:@"."].location >= 10 && range.location <= [textFieldString rangeOfString:@"."].location)
+                {//小数点前超8位
+                    return NO;
+                }
+            }
+            else if (aCharacter != 46 && [textFieldString rangeOfString:@"."].location == NSNotFound && textFieldString.length >= 10)
+            {//小数点前最长8位
+                return NO;
+            }
+            NSMutableString *textString = [NSMutableString stringWithString:[self stringWithOutComma:textFieldString]];
+            if ([textString doubleValue] != 0.0f)
+            {
+                if ([string isEqualToString:@"."] && textFieldString.length - range.location > 2)
+                {
+                    return NO;
+                }
+                [textFieldString insertString:string atIndex:range.location];
+                textString = [NSMutableString stringWithString:[self stringWithOutComma:textFieldString]];
+                if ([textString doubleValue] > [money doubleValue])
+                {
+                    moneyTextField.text = [NSString stringWithComma:money];
+                    return NO;
+                }
+                else
+                {
+                    NSRange rangel = [textString rangeOfString:@"."];
+                    if (rangel.location != NSNotFound)
+                    {
+                        NSArray *pointArray = [textString componentsSeparatedByString:@"."];
+                        NSString *pointString = pointArray[0];
+                        NSString *pointString1 = pointArray[1];
+                        textString = [NSMutableString stringWithFormat:@"%ld.%@",(long)[pointString integerValue],pointString1];
+                    }
+                    else
+                    {
+                        textString = [NSMutableString stringWithFormat:@"%ld",(long)[textString integerValue]];
+                    }
+                    
+                    moneyTextField.text = [NSString stringWithComma:textString];
+                    return NO;
+                }
+            }
+            else
+            {
+                if ([string isEqualToString:@"."] || [textString rangeOfString:@"."].location != NSNotFound)
+                {
+                    [textString insertString:string atIndex:range.location];
+                    if ([textString doubleValue] > [money doubleValue])
+                    {
+                        moneyTextField.text = [NSString stringWithComma:money];
+                        return NO;
+                    }
+                    
+                }
+                else
+                {
+                    if (textString == nil || textString.length == 0)
+                    {
+                        moneyTextField.text = string;
+                        if ([moneyTextField.text doubleValue] > [money doubleValue])
+                        {
+                            moneyTextField.text = [NSString stringWithComma:money];
+                            return NO;
+                        }
+                        return NO;
+                    }
+                    else
+                    {
+                        [textString replaceCharactersInRange:NSMakeRange(0, 1) withString:string];
+                        moneyTextField.text = textString;
+                        if ([textString doubleValue] > [money doubleValue])
+                        {
+                            moneyTextField.text = [NSString stringWithComma:money];
+                            return NO;
+                        }
+                        return NO;
+                    }
+                }
+            }
+        }
+        return YES;
+    }
 }
 -(void)addBtnAction{
     SwiftViewController *sv = [[SwiftViewController alloc]init];

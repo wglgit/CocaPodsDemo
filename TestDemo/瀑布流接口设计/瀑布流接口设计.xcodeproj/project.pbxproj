@@ -288,7 +288,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREFIX_HEADER = "/Users/wgl7569/Desktop/TestDemo/瀑布流接口设计/瀑布流接口设计/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/瀑布流接口设计/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -346,6 +346,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/瀑布流接口设计/PrefixHeader.pch";
 				INFOPLIST_FILE = "瀑布流接口设计/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -415,6 +416,7 @@
 				E4B585E91A8DC6BD0073FD78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E4B585EA1A8DC6BD0073FD78 /* Build configuration list for PBXNativeTarget "瀑布流接口设计Tests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +425,7 @@
 				E4B585EC1A8DC6BD0073FD78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

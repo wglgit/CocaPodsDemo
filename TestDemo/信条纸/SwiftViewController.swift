@@ -13,12 +13,27 @@ class SwiftViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        var uStr:String = UIDevice.currentDevice().systemVersion as String
+        let verson = (uStr as NSString).floatValue
+        print("\(verson)\n")
+        var testBtn:UIButton = UIButton.buttonWithType(UIButtonType.ContactAdd) as! UIButton
+        testBtn.frame = CGRectMake(100, 100, 30, 30);
+        testBtn.addTarget(self, action:Selector("btnAcion:"), forControlEvents: UIControlEvents.TouchUpInside)
         var palyer = Player(name:"www")
+        self.view.addSubview(testBtn)
         palyer.completeLevel(2)
         print("the player the highest level is \(LevelTracker.highestUnlockLevel)")
         self.view.backgroundColor = UIColor.greenColor();
+        let version:String = NSBundle.mainBundle().infoDictionary!["CFBundleInfoDictionaryVersion"] as! String
+        print(version)
+//        let version:String = NSBundle.mainBundle().infoDictionary[CFBundlein]
+        
         
         // Do any additional setup after loading the view.
+    }
+    func btnAcion(btn:UIButton){
+        let sv:sendViewController = sendViewController()
+        self.presentViewController(sv, animated:true, completion: nil)
     }
     struct LevelTracker {
         static var highestUnlockLevel = 1;

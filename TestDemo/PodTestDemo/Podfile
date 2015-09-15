@@ -1,0 +1,11 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '7.0'
+
+target 'PodTestDemo' do
+pod 'ASIHTTPRequest', '1.8.2'
+end
+
+target 'PodTestDemoTests' do
+
+end
+

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>02CFE329-2BD1-461A-B375-CB4B7BA4355E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7BBA9EB6C08B4CF279AFC4260D1D65049348C21B</key>
+		<string>https://github.com/wglgit/CocaPodsDemo</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TestDemo/PodTestDemo/PodTestDemo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7BBA9EB6C08B4CF279AFC4260D1D65049348C21B</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/wglgit/CocaPodsDemo</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7BBA9EB6C08B4CF279AFC4260D1D65049348C21B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7BBA9EB6C08B4CF279AFC4260D1D65049348C21B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>wglgit</string>
+		</dict>
+	</array>
+</dict>
+</plist>
